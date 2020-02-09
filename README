@@ -1,0 +1,20 @@
+
+
+Start Zookeeper server:
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Start Kafka Server:
+bin/kafka-server-start.sh config/server.properties
+
+Create a Kafka Topic:
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TECHSTREAMS
+
+create list:
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+Start Kafka producer console:
+ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TECHSTREAMS
+
+Start Kafka consumer console:
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TECHSTREAMS  --from-beginning
+
